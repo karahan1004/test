@@ -1,0 +1,32 @@
+src/main/java
+	+---user.view
+		+-----SignupServlet.java
+		=>url-pattern: /Signup
+		+----MemberListServlet.java
+		=>url-pattern: /MemberList
+		+----MemberDeleteServer.java
+		=>url-pattern: /MemberDelete
+		doGet()재정의	
+
+
+webapp
+   +---css/member.css
+   +---member/join.html
+=> http://localhost:9999/member/Signup
+
+#삭제처리MemberDeleteServer.java
+[1] 회원번호 파라미터값 받기
+[2] 유효성 체크=> MemberList로 sendRedirect()하기
+[3] MemberDAO생성...delete(회원번호-int)
+[4] 그 실행결과 메시지 alert()로 보여주고
+    페이지 이동(MemberList)
+
+
+#수정 처리
+
+[1] 수정할 회원정보 가져와서 보여주기==>select문 where절 no=?
+	edit.jsp
+
+[2] 수정하기 버튼을 누르면 ==>update문을 수행하는 로직 처리
+	MemberUpdateServlet.java
+	=>url-pattern: /MemberUpdate
